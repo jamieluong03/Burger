@@ -1,20 +1,22 @@
+<div class="container">
 <h1>Eat the burger!</h1>
+<img id="burgerpic">
 
 <div class="row">
     <div class="col-6">
 <ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burger/burger-block devoured=true}}
     {{/unless}}
   {{/each}}
 </ul>
 </div>
 <div class="col-6">
 <ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burger/burger-block devoured=false}}
     {{/if}}
   {{/each}}
 </ul>
@@ -27,10 +29,11 @@
 
   <div class="form-group">
     <label for="ca">What burger would you like to eat?</label>
-    <textarea type="text" id="ca" name="name">
+    <textarea type="text" id="ca" name="name"></textarea>
   </div>
 
   <button type="submit">Add Burger</button>
 </form>
 
+</div>
 </div>

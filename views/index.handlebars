@@ -8,19 +8,34 @@
 
 <div class="row">
     <div class="col-6 text-center">
+      <h3>Burgers to eat:</h3>
 <ul>
   {{#each burgers}}
     {{#unless this.devoured}}
-      {{> burger/burger-block devoured=false}}
+      {{!-- {{> burger/burger-block devoured=false}} --}}
+      <li>
+        {{this.id}}
+        {{this.burger_name}}
+
+        <form action="/{{this.id}}" method="PUT" method="POST">
+          <input type="hidden" name="devoured" value="true">
+          <button class="btn btn-primary" type="submit">Devour It!</button>
+        </form>
+      </li>
     {{/unless}}
   {{/each}}
 </ul>
 </div>
 <div class="col-6 text-center">
+  <h3>Burgers eaten</h3>
 <ul>
   {{#each burgers}}
     {{#if this.devoured}}
-      {{> burger/burger-block devoured=true}}
+    <li>
+      {{this.id}}
+      {{this.devoured}}
+    </li>
+      {{!-- {{> burger/burger-block devoured=true}} --}}
     {{/if}}
   {{/each}}
 </ul>

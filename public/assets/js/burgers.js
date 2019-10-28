@@ -28,7 +28,7 @@ $(document).ready(function() {
       var newBurger = {
         burger_name: $("#ca").val().trim(),
       };
-  
+      alert(newBurger.burger_name)
       // Send the POST request.
       $.ajax("/api/burgers", {
         type: "POST",

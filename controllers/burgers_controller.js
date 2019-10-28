@@ -27,7 +27,7 @@ router.get("/", function(req, res) {
     burger.create([
       "burger_name", "devoured"
     ], [
-      req.body.burger_name, req.body.devoured
+      req.body.burger_name, false
     ], function(result) {
       // Send back the ID of the new quote
       res.redirect("/");
@@ -44,7 +44,7 @@ router.get("/", function(req, res) {
     // console.log("condition", condition);
   
     burger.update({
-      devoured: req.body.devoured
+      devoured: true,
     }, condition, function(result) {
       res.redirect("/");
       // if (result.changedRows == 0) {

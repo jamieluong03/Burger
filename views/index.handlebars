@@ -12,16 +12,16 @@
 <ul>
   {{#each burgers}}
     {{#unless this.devoured}}
-      {{!-- {{> burger/burger-block devoured=false}} --}}
-      <li>
-        {{this.id}}
-        {{this.burger_name}}
+      {{> burger/burger-block devoured=false}}
+      {{!-- <li> --}}
+        {{!-- {{this.id}}
+        {{this.burger_name}} --}}
 
-        <form action="/{{this.id}}" method="PUT" method="POST">
+        {{!-- <form action="/{{this.id}}" method="PUT" method="POST">
           <input type="hidden" name="devoured" value="true">
-          <button class="btn btn-primary" type="submit">Devour It!</button>
-        </form>
-      </li>
+          <button class="btn btn-primary change-devoured" type="submit">Devour It!</button>
+        </form> --}}
+      {{!-- </li> --}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -31,11 +31,11 @@
 <ul>
   {{#each burgers}}
     {{#if this.devoured}}
-    <li>
-      {{this.id}}
-      {{this.devoured}}
-    </li>
-      {{!-- {{> burger/burger-block devoured=true}} --}}
+    {{!-- <li> --}}
+      {{!-- {{this.id}}
+      {{this.devoured}} --}}
+    {{!-- </li> --}}
+      {{> burger/burger-block devoured=true}}
     {{/if}}
   {{/each}}
 </ul>

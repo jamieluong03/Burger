@@ -5,7 +5,7 @@ $(document).ready(function() {
       // var newDevoured = $(this).data("true");
   
       var newDevouredState = {
-        devoured: true
+        devoured: 1
       };
   
       // Send the PUT request.
@@ -27,9 +27,9 @@ $(document).ready(function() {
   
       var newBurger = {
         burger_name: $("#ca").val().trim(),
-        devoured: false,
+        devoured: 0,
       };
-      alert(newBurger.burger_name)
+      console.log(newBurger);
       // Send the POST request.
       $.ajax("/", {
         type: "POST",
